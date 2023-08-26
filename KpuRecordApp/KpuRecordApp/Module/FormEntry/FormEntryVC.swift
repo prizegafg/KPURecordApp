@@ -100,9 +100,9 @@ class FormEntryVC: UIViewController {
         btnShowLocation.addTarget(self, action: #selector(selectLocation), for: .touchUpInside)
         btnCapture.addTarget(self, action: #selector(capture), for: .touchUpInside)
         btnSelectFile.addTarget(self, action: #selector(selectFile), for: .touchUpInside)
-        if isInputted == true {
+        if isInputted == false {
             btnSubmit.addTarget(self, action: #selector(submit), for: .touchUpInside)
-        } else if isInputted == false {
+        } else if isInputted == true {
             btnSubmit.addTarget(self, action: #selector(updateData), for: .touchUpInside)
         }
         

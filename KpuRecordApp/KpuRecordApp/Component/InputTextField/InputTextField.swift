@@ -40,6 +40,7 @@ class InputTextField: UIView{
         // Customize appearance
         lblTitle.text = "Enter Text:"
         txtInput.borderStyle = .roundedRect
+        txtInput.delegate = self
     }
 
     // Exposed methods to configure the text field
@@ -64,4 +65,11 @@ class InputTextField: UIView{
     }
     
 
+}
+
+extension InputTextField: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtInput.resignFirstResponder()
+        return true
+    }
 }
