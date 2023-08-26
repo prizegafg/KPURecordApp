@@ -1,0 +1,19 @@
+{
+  "commitish" : "0.14.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "24cb23a2cf20482b2c838c6686351b971df9703c7927d371e97812adb7fbe73e",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "ffdd94b12128742df497c9634ed11e8227d6df69bb9ac00392af3f76cef9bc9c",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

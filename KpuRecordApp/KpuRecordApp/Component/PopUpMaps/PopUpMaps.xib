@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpMaps" customModule="KpuRecordApp" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSelectLocation" destination="z6S-gC-KKt" id="Vnu-iY-aOP"/>
+                <outlet property="lblCurrentLocation" destination="ROz-Ti-PzQ" id="dso-S0-ZPr"/>
+                <outlet property="mapKit" destination="XCJ-vp-Zxz" id="2Yo-cv-c0X"/>
+                <outlet property="navigation" destination="Pcd-vl-0hK" id="p3O-uM-gws"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sDF-yA-uHk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-vl-0hK" customClass="NavigationBar" customModule="KpuRecordApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="wOB-NX-hbb"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-Ti-PzQ">
+                    <rect key="frame" x="175.66666666666666" y="129" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-vp-Zxz">
+                    <rect key="frame" x="20" y="170" width="353" height="568"/>
+                    <standardMapConfiguration key="preferredConfiguration"/>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-gC-KKt">
+                    <rect key="frame" x="20" y="758" width="353" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="n0r-Nw-BlH"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="XCJ-vp-Zxz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6Y1-Qm-UN6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="z6S-gC-KKt" secondAttribute="bottom" constant="20" id="A2L-VT-UyQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="z6S-gC-KKt" secondAttribute="trailing" constant="20" id="AbV-PA-bvA"/>
+                <constraint firstItem="ROz-Ti-PzQ" firstAttribute="top" secondItem="Pcd-vl-0hK" secondAttribute="bottom" constant="10" id="BtA-fL-c18"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pcd-vl-0hK" secondAttribute="trailing" id="HUM-a8-NP4"/>
+                <constraint firstItem="XCJ-vp-Zxz" firstAttribute="top" secondItem="ROz-Ti-PzQ" secondAttribute="bottom" constant="20" id="Hpz-jq-S3q"/>
+                <constraint firstItem="Pcd-vl-0hK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LEy-dA-Y9t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XCJ-vp-Zxz" secondAttribute="trailing" constant="20" id="Mkh-DA-Iqy"/>
+                <constraint firstItem="z6S-gC-KKt" firstAttribute="top" secondItem="XCJ-vp-Zxz" secondAttribute="bottom" constant="20" id="PXn-cW-z15"/>
+                <constraint firstItem="Pcd-vl-0hK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VgE-qV-1GC"/>
+                <constraint firstItem="ROz-Ti-PzQ" firstAttribute="centerX" secondItem="Pcd-vl-0hK" secondAttribute="centerX" id="tym-NX-lZF"/>
+                <constraint firstItem="z6S-gC-KKt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uRr-GI-kwk"/>
+            </constraints>
+            <point key="canvasLocation" x="64.885496183206101" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

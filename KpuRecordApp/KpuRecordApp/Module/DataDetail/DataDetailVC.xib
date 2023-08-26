@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DataDetailVC" customModule="KpuRecordApp" customModuleProvider="target">
+            <connections>
+                <outlet property="imgData" destination="6pa-hz-oSr" id="nhT-Ue-miZ"/>
+                <outlet property="navigation" destination="1cf-00-8TF" id="58K-xf-15k"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwAddress" destination="Ewq-WM-DdA" id="cXU-3D-pYC"/>
+                <outlet property="vwDate" destination="1Tc-oh-9Ho" id="Gle-AL-hPS"/>
+                <outlet property="vwGender" destination="u2X-Tk-ygE" id="Akj-Tk-rDA"/>
+                <outlet property="vwImage" destination="P6H-XZ-qFI" id="VJq-xC-4ja"/>
+                <outlet property="vwNIK" destination="FvO-9m-f1n" id="Ijg-KN-1sy"/>
+                <outlet property="vwName" destination="uK9-r9-cpa" id="M7k-6B-vKI"/>
+                <outlet property="vwPhoneNumb" destination="L7i-X4-uhZ" id="czT-Up-D3p"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-00-8TF" customClass="NavigationBar" customModule="KpuRecordApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="7mW-wy-BUD"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIH-Bd-Yjq">
+                    <rect key="frame" x="20" y="119" width="353" height="699"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-nw-Eky">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="650"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvO-9m-f1n" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="epF-Gu-Xld"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uK9-r9-cpa" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="50" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Th5-c4-XRc"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7i-X4-uhZ" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="100" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="c2Q-fr-Etl"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2X-Tk-ygE" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="150" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Q5g-5E-cLv"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-oh-9Ho" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="200" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="aV7-CH-1Nq"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-WM-DdA" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="250" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="1Wb-hZ-QQL"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-XZ-qFI" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="300" width="350" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Paz-z1-UE0"/>
+                                    </constraints>
+                                </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6pa-hz-oSr">
+                                    <rect key="frame" x="0.0" y="350" width="350" height="300"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="qIz-z6-Txo"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="350" id="tMw-pv-LCd"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="DBD-nw-Eky" firstAttribute="leading" secondItem="QIH-Bd-Yjq" secondAttribute="leading" id="Jgz-5L-9vE"/>
+                        <constraint firstAttribute="trailing" secondItem="DBD-nw-Eky" secondAttribute="trailing" id="bUh-Vf-xoZ"/>
+                        <constraint firstAttribute="bottom" secondItem="DBD-nw-Eky" secondAttribute="bottom" id="cWn-34-MEL"/>
+                        <constraint firstItem="DBD-nw-Eky" firstAttribute="top" secondItem="QIH-Bd-Yjq" secondAttribute="top" id="s1T-uI-aOX"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="y9c-Kr-Dmy"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="uUw-cf-MpR"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1cf-00-8TF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8pu-eb-4P6"/>
+                <constraint firstItem="1cf-00-8TF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="A7y-G1-U7R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1cf-00-8TF" secondAttribute="trailing" id="QBq-6J-4TN"/>
+                <constraint firstItem="QIH-Bd-Yjq" firstAttribute="top" secondItem="1cf-00-8TF" secondAttribute="bottom" id="RbH-HR-T3f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QIH-Bd-Yjq" secondAttribute="bottom" id="Tqs-KT-3f6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QIH-Bd-Yjq" secondAttribute="trailing" constant="20" id="V0v-G0-zV9"/>
+                <constraint firstItem="QIH-Bd-Yjq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kGZ-Pf-8z2"/>
+            </constraints>
+            <point key="canvasLocation" x="12" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
