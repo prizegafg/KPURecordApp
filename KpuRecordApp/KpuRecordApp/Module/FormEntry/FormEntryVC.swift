@@ -42,12 +42,16 @@ class FormEntryVC: UIViewController {
     var date: String?
     var address: String?
     var gender: String?
-    var image: String?
+    var imageData: String?
+    var isInputted = false
+    
+    var data = formEntryModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         setUpAction()
+        setUpData()
        
     }
     
@@ -96,7 +100,18 @@ class FormEntryVC: UIViewController {
         btnShowLocation.addTarget(self, action: #selector(selectLocation), for: .touchUpInside)
         btnCapture.addTarget(self, action: #selector(capture), for: .touchUpInside)
         btnSelectFile.addTarget(self, action: #selector(selectFile), for: .touchUpInside)
-        btnSubmit.addTarget(self, action: #selector(submit), for: .touchUpInside)
+        if isInputted == true {
+            btnSubmit.addTarget(self, action: #selector(submit), for: .touchUpInside)
+        } else if isInputted == false {
+            btnSubmit.addTarget(self, action: #selector(updateData), for: .touchUpInside)
+        }
+        
+    }
+    
+    func setUpData(){
+        if let navigation = navigationController{
+            presenter?.startReadData(nav: navigation)
+        }
     }
     
     
@@ -156,6 +171,38 @@ class FormEntryVC: UIViewController {
         address = vwAddress.getEnteredText()
         phoneNumb = vwPhoneNumber.getEnteredText()
         
+        data.nik = nik
+        data.name = name
+        data.date = date
+        data.gender = gender
+        data.address = address
+        data.phoneNumb = phoneNumb
+        data.image = imageData
+        
+        if let navigation = navigationController {
+            presenter?.startFetchData(data: data, nav: navigation)
+        }
+    }
+    
+    @objc func updateData(){
+        nik = vwNIK.getEnteredText()
+        name = vwName.getEnteredText()
+        date = vwDate.getEnteredText()
+        address = vwAddress.getEnteredText()
+        phoneNumb = vwPhoneNumber.getEnteredText()
+        
+        data.nik = nik
+        data.name = name
+        data.date = date
+        data.address = address
+        data.phoneNumb = phoneNumb
+        data.gender = gender
+        data.image = imageData
+        print(gender)
+        
+        if let navigation = navigationController {
+            presenter?.startUpdateData(data: data, nav: navigation)
+        }
     }
 
 
@@ -163,13 +210,54 @@ class FormEntryVC: UIViewController {
 }
 
 extension FormEntryVC: PTVFormEntryProtocol{
-    func success(message: String, nav: UINavigationController) {
+    func success(message: String) {
         Alert.showGeneralAlert(title: "Success", message: message, viewController: self)
     }
     
-    func failed(message: String, nav: UINavigationController) {
+    func failed(message: String) {
         Alert.showGeneralAlert(title: "Failed", message: message, viewController: self)
     }
+    
+    func alreadyInput(data: formEntryModel) {
+        nik = data.nik
+        name = data.name
+        phoneNumb = data.phoneNumb
+        date = data.date
+        address = data.address
+        gender = data.gender
+        imageData = data.image
+        isInputted = data.inputted ?? true
+        
+        vwNIK.setInputText(text: nik ?? "")
+        vwName.setInputText(text: name ?? "")
+        vwPhoneNumber.setInputText(text: phoneNumb ?? "")
+        vwDate.setInputText(text: date ?? "")
+        vwAddress.setInputText(text: address ?? "")
+        print(gender)
+        if gender == "Male" {
+            isMale = true
+            isFemale = false
+            imgSelMale.image = UIImage(named: "RadioOn")
+            imgSelFemale.image = UIImage(named: "RadioOff")
+        } else if gender == "Female" {
+            isMale = false
+            isFemale = true
+            imgSelMale.image = UIImage(named: "RadioOff")
+            imgSelFemale.image = UIImage(named: "RadioOn")
+        }
+        
+        if let stringToImage = stringToImage(imageData ?? "") {
+            imgView.image = stringToImage
+        }
+        
+        
+        
+    }
+    
+    func notInput() {
+        print("OK")
+    }
+    
     
     
 }
@@ -179,8 +267,17 @@ extension FormEntryVC: UIImagePickerControllerDelegate, UINavigationControllerDe
         
         
         if let selectedImage = info[.originalImage] as? UIImage {
-            image = imageToString(selectedImage)
+            imageData = imageToString(selectedImage)
             imgView.image = selectedImage
+            if let image = imgView.image {
+                if let base64String = imageToString(imgView.image!) {
+                    imageData = base64String
+                } else {
+                    Alert.showGeneralAlert(title: "Error", message: "Failed to Convert Image", viewController: self)
+                }
+            } else {
+                Alert.showGeneralAlert(title: "Error", message: "No Image to Convert", viewController: self)
+            }
         }
         picker.dismiss(animated: true, completion: nil)
     }

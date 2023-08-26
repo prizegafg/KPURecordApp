@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListParticipantVC" customModule="KpuRecordApp" customModuleProvider="target">
             <connections>
+                <outlet property="navigation" destination="zTQ-b7-ek3" id="Hmg-aB-MOp"/>
+                <outlet property="tableView" destination="poI-UE-3pk" id="ieF-La-UQM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

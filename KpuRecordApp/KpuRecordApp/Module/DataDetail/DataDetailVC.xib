@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DataDetailVC" customModule="KpuRecordApp" customModuleProvider="target">
             <connections>
+                <outlet property="btnDelete" destination="fMQ-hI-to2" id="BQ0-8m-7rB"/>
+                <outlet property="btnUpdate" destination="oew-Tv-PKy" id="wMc-Eq-idl"/>
                 <outlet property="imgData" destination="6pa-hz-oSr" id="nhT-Ue-miZ"/>
                 <outlet property="navigation" destination="1cf-00-8TF" id="58K-xf-15k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -39,7 +41,7 @@
                     <rect key="frame" x="20" y="119" width="353" height="699"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-nw-Eky">
-                            <rect key="frame" x="0.0" y="0.0" width="350" height="650"/>
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="720"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvO-9m-f1n" customClass="ListLabel" customModule="KpuRecordApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -96,6 +98,34 @@
                                         <constraint firstAttribute="height" constant="300" id="qIz-z6-Txo"/>
                                     </constraints>
                                 </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyr-G8-Kdj">
+                                    <rect key="frame" x="0.0" y="660" width="350" height="60"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yg4-37-yFG">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oew-Tv-PKy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMQ-hI-to2">
+                                                    <rect key="frame" x="185" y="0.0" width="165" height="60"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Yg4-37-yFG" firstAttribute="top" secondItem="qyr-G8-Kdj" secondAttribute="top" id="DSh-Et-edF"/>
+                                        <constraint firstAttribute="bottom" secondItem="Yg4-37-yFG" secondAttribute="bottom" id="HVP-Ef-4Ex"/>
+                                        <constraint firstAttribute="height" constant="60" id="Igl-wV-H0N"/>
+                                        <constraint firstItem="Yg4-37-yFG" firstAttribute="leading" secondItem="qyr-G8-Kdj" secondAttribute="leading" id="KzP-oT-BKd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yg4-37-yFG" secondAttribute="trailing" id="jRn-L5-ang"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="width" constant="350" id="tMw-pv-LCd"/>

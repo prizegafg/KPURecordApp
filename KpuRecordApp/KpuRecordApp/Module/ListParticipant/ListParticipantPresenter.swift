@@ -13,9 +13,18 @@ class ListParticipantPresenter: VTPListParticipantProtocol{
     var interactor: PTIListParticipantProtocol?
     var router: PTRListParticipantProtocol?
     
+    func startFetchData(nav: UINavigationController) {
+        interactor?.fetchData(nav: nav)
+    }
+    
+    
     
 }
 
 extension ListParticipantPresenter: ITPListParticipantProtocol{
+    func onSuccess(data: [String]) {
+        view?.onSuccess(data: data)
+    }
+    
     
 }

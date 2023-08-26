@@ -75,9 +75,20 @@ class MenuVC: UIViewController {
     }
     
     @objc func exitPress(){
-        if let navigation = navigationController{
-            print("Exit pressed")
-        }
+        let exitConfirmation = UIAlertController(title: "Exit", message: "Are you sure you want to exit?", preferredStyle: .alert)
+                
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { _ in
+            // Perform any cleanup or tasks if needed
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+            // This will suspend the app, which is similar to putting it in the background
+            }
+                
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+            exitConfirmation.addAction(confirmAction)
+            exitConfirmation.addAction(cancelAction)
+                
+            present(exitConfirmation, animated: true, completion: nil)
     }
     
     

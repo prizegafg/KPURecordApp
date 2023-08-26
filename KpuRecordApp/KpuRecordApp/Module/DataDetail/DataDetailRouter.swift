@@ -25,5 +25,12 @@ class DataDetailRouter: PTRDataDetailProtocol{
         return view
     }
     
+    func goToHome(nav: UINavigationController) {
+        let view = MenuRouter.createMainMenuModule()
+        nav.pushViewController(view, animated: true)
+    }
+    
+    
+    
     
 }

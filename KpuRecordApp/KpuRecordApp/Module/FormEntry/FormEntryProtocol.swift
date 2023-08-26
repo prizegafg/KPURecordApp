@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 protocol PTVFormEntryProtocol: AnyObject {
-    func success(message: String, nav: UINavigationController)
-    func failed(message: String, nav: UINavigationController)
+    func success(message: String)
+    func failed(message: String)
+    func alreadyInput(data: formEntryModel)
+    func notInput()
 }
 
 protocol VTPFormEntryProtocol: AnyObject {
@@ -19,6 +21,8 @@ protocol VTPFormEntryProtocol: AnyObject {
     var router: PTRFormEntryProtocol? {get set}
     
     func startFetchData(data: formEntryModel, nav: UINavigationController)
+    func startReadData(nav: UINavigationController)
+    func startUpdateData(data: formEntryModel, nav: UINavigationController)
     
     
 }
@@ -36,10 +40,14 @@ protocol PTIFormEntryProtocol: AnyObject {
     var presenter: ITPFormEntryProtocol? {get set}
     
     func fetchData(data: formEntryModel, nav: UINavigationController)
+    func readData(nav: UINavigationController)
+    func updateData(data: formEntryModel, nav: UINavigationController)
     
 }
 
 protocol ITPFormEntryProtocol: AnyObject {
-    func onSuccess(message: String, nav: UINavigationController)
-    func onFailed(message: String, nav: UINavigationController)
+    func onSuccess(message: String)
+    func onFailed(message: String)
+    func onAlreadyInput(data: formEntryModel)
+    func onNotInput()
 }

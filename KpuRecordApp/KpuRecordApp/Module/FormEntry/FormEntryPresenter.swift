@@ -14,20 +14,38 @@ class FormEntryPresenter: VTPFormEntryProtocol{
     var router: PTRFormEntryProtocol?
     
     func startFetchData(data: formEntryModel, nav: UINavigationController) {
-        
+        interactor?.fetchData(data: data, nav: nav)
     }
+    
+    func startReadData(nav: UINavigationController){
+        interactor?.readData(nav: nav)
+    }
+    
+    func startUpdateData(data: formEntryModel, nav: UINavigationController) {
+        interactor?.updateData(data: data, nav: nav)
+    }
+    
     
     
     
 }
 
 extension FormEntryPresenter: ITPFormEntryProtocol{
-    func onSuccess(message: String, nav: UINavigationController) {
+    func onSuccess(message: String) {
+        view?.success(message: message)
+    }
+    
+    func onFailed(message: String) {
+        view?.failed(message: message)
         
     }
     
-    func onFailed(message: String, nav: UINavigationController) {
-        
+    func onAlreadyInput(data: formEntryModel) {
+        view?.alreadyInput(data: data)
+    }
+    
+    func onNotInput() {
+        view?.notInput()
     }
     
     

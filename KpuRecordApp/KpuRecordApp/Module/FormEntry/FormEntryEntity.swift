@@ -15,6 +15,7 @@ struct formEntryModel{
     var date: String?
     var image: String?
     var gender: String?
+    var inputted: Bool?
     
     init(){}
 }

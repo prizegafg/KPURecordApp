@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct ListParticipantModel{
+    var nik: String?
+    var name: String?
+    
+    init(){}
+    
+}
+
+

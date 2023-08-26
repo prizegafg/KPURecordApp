@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
-protocol PTVListParticipantProtocol: AnyObject {}
+protocol PTVListParticipantProtocol: AnyObject {
+    func onSuccess(data: [String])
+}
 
 protocol VTPListParticipantProtocol: AnyObject {
     var view: PTVListParticipantProtocol? {get set}
     var interactor: PTIListParticipantProtocol? {get set}
     var router: PTRListParticipantProtocol? {get set}
+    
+    func startFetchData(nav: UINavigationController)
     
     
 }
@@ -28,6 +32,10 @@ protocol PTRListParticipantProtocol: AnyObject {
 
 protocol PTIListParticipantProtocol: AnyObject {
     var presenter: ITPListParticipantProtocol? {get set}
+    
+    func fetchData(nav: UINavigationController)
 }
 
-protocol ITPListParticipantProtocol: AnyObject {}
+protocol ITPListParticipantProtocol: AnyObject {
+    func onSuccess(data: [String])
+}

@@ -27,8 +27,8 @@ class MenuRouter: PTRMenuProtocol{
     }
     
     func goToInformation(nav: UINavigationController) {
-        let view = DataDetailRouter.createDataDetailModule()
-//        let view = InformationRouter.createInformationModule()
+//        let view = DataDetailRouter.createDataDetailModule()
+        let view = InformationRouter.createInformationModule()
         nav.pushViewController(view, animated: true)
     }
     
@@ -38,7 +38,7 @@ class MenuRouter: PTRMenuProtocol{
     }
     
     func goToShowData(nav: UINavigationController) {
-        let view = ListParticipantRouter.createListParticipantModule()
+        let view = DataDetailRouter.createDataDetailModule()
         nav.pushViewController(view, animated: true)
     }
     
