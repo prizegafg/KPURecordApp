@@ -25,8 +25,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI3-Pu-gEk">
-                    <rect key="frame" x="47" y="26.333333333333336" width="41.333333333333343" height="20.333333333333336"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xI3-Pu-gEk">
+                    <rect key="frame" x="47" y="26.333333333333336" width="346" height="20.333333333333336"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -34,6 +34,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="xI3-Pu-gEk" secondAttribute="trailing" id="Rys-wV-ipY"/>
                 <constraint firstItem="xI3-Pu-gEk" firstAttribute="leading" secondItem="Iel-jq-vfS" secondAttribute="trailing" constant="5" id="gwq-Xz-lIb"/>
                 <constraint firstItem="Iel-jq-vfS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="l8l-ve-Nvk"/>
                 <constraint firstItem="Iel-jq-vfS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mJj-9M-d6t"/>

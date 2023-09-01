@@ -91,6 +91,9 @@ class FormEntryVC: UIViewController {
         btnSubmit.backgroundColor = .blue
         btnSubmit.layer.cornerRadius = 20
         
+        vwNIK.txtInput.keyboardType = .numberPad
+        vwPhoneNumber.txtInput.keyboardType = .numberPad
+        
         
     }
     
